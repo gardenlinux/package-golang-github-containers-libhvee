@@ -1,0 +1,23 @@
+Source: golang-github-containers-libhvee
+Maintainer: Gardenlinux Maintainers <contact@gardenlinux.io>
+Section: devel
+Testsuite: autopkgtest-pkg-go
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any,
+               golang-golang-x-sys-dev,
+Standards-Version: 4.6.0
+Homepage: https://github.com/containers/libhvee
+Rules-Requires-Root: no
+XS-Go-Import-Path: github.com/containers/libhvee
+
+Package: golang-github-containers-libhvee-dev
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Multi-Arch: foreign
+Description: Libhvee is a special purposed library for interacting with
+ Microsoft's HyperV hypervisor. It was designed with the Ignition and Podman
+ projects in mind largely because Podman Machine would like to support HyperV
+ in addition to WSL2. 

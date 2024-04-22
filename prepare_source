@@ -1,0 +1,8 @@
+tmp_dir="$(mktemp -d)"
+trap 'cd / && rm -rf "$tmp_dir"' EXIT
+git clone --depth 1 --recurse-submodules --branch v0.6.0 https://github.com/containers/libhvee.git "$tmp_dir"
+pushd "$tmp_dir"
+git rm -r vendor/
+git ls-files --recurse-submodules -z | tar --create --xform s:^:_/: --null --files-from - | tee "$dir/orig.tar" | tar --extract --strip-components 1 --directory "$dir/src"
+popd
+cp -r debian "$dir/src/" 

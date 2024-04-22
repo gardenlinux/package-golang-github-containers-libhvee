@@ -1,0 +1,5 @@
+#!/usr/bin/make -f
+
+export DH_GOLANG_EXCLUDES := cmd/ pkg/hypervctl pkg/wmiext
+%:
+	dh $@ --buildsystem=golang --with=golang
