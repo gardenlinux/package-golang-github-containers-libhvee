@@ -6,3 +6,4 @@ git rm -r vendor/
 git ls-files --recurse-submodules -z | tar --create --xform s:^:_/: --null --files-from - | tee "$dir/orig.tar" | tar --extract --strip-components 1 --directory "$dir/src"
 popd
 cp -r debian "$dir/src/" 
+version_suffix=gardenlinux0
