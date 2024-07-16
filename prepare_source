@@ -2,3 +2,4 @@ git_src --branch v0.7.1 https://github.com/containers/libhvee.git
 rm -rf "$dir/src/vendor"
 tar -f "$dir/orig.tar" --delete _/vendor
 cp -r debian "$dir/src/" 
+version_suffix=gardenlinux0
